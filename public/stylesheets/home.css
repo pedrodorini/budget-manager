@@ -10,7 +10,7 @@ body {
   z-index: 1;
   position: relative;
   text-align: center;
-  padding: 35vh;
+  padding: 35vh 0;
 }
 .slideshow { 
   position: fixed;
@@ -37,18 +37,18 @@ body {
   animation: imageAnimation 40s linear infinite;
 }
 .slideshow li:nth-child(1) { 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?w=940&h=650&auto=compress&cs=tinysrgb) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/128867/coins-currency-investment-insurance-128867.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/45112/pexels-photo-45112.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
   animation-delay: 30s; 
 }
 @keyframes imageAnimation { 

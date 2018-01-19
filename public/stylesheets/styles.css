@@ -15,12 +15,10 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
-  margin: 20px 50px;
+  margin: 20px 25px;
 }
 .menu {
-  height: 100%;
-  margin: 0 50px;
-  float: right;
+  display: none;
 }
 a:hover {
   color: #fff;
@@ -48,9 +46,128 @@ a {
 .btn:hover {
   background-color: #4b2696;
 }
-.menu-item a {
-  margin-top: 15px;
+.navigation {
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #5e30ba;
+  transition: all 0.4s ease-in-out;
+  padding-top: 0px;
 }
-.menu-item:hover {
-  background-color: #4b2696;
+.navigation a {
+  text-decoration: none;
+}
+.navigation .menulist {
+  margin-top:30px;
+  text-align: center;
+  list-style: none; 
+  margin-left: auto;
+  margin-right: auto;
+}
+.menulist {
+  width: 200px;
+}
+.logo {
+  text-align: center;
+  margin:0 auto;
+}
+.line1, .line2, .line3 {
+  margin-top:5px;
+  background-color:#fff;
+  width:25px;
+  height:3px;
+  display:block;
+  position:relative;
+  opacity:1.0;
+  border-radius:15%;
+  transition: all .3s;
+}
+.line1.active {
+  transform: rotate(270deg);
+  opacity:0.0;
+  background-color:#4b2696;
+  top:5px;
+}
+.line2.active {
+  transform: rotate(45deg);
+  background-color:#4b2696;
+}
+.line3.active {
+  transform: rotate(-45deg);
+  background-color:#4b2696;
+  top:-7px;
+}
+.menuitems {
+  padding-top:12px;
+  padding-bottom:12px;
+  text-decoration: none;
+  list-style:none; 
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  display: inline-block;
+  position:relative;	
+  text-align:center;
+  color: #fff;
+  opacity:0.0;
+  transition: all .5s ease-in-out;
+}
+.menuitems:after {
+  content:'';
+  display:block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width .2s;
+}
+.menuitems:hover::after {
+  width:100%;
+}
+#closebtn {
+  height:25px;
+  width:25px;	
+  text-decoration:none;
+  font-size: 36px !important;
+  z-index:100;
+  color:#fff;
+  cursor:pointer;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+#main {	
+  transition: margin-top .4s;
+  text-align:center;
+  margin:auto;
+  padding: 16px;
+  font-size:30px;
+}
+@media (min-width: 640px) {
+  #closebtn {
+    display: none;
+  }
+  #main {
+    display: none;
+  }
+  .menulist {
+    display: none;
+  }
+  .menu {
+    display: block;
+    height: 100%;
+    margin: 0 50px;
+    float: right;
+  }
+  .menu-item {
+    height: 100%;
+    display: inline-block;
+  }
+  .menu-item a {
+    margin-top: 15px;
+    display: inline-block;
+  }
+  .menu-item:hover {
+    background-color: #4b2696;
+  }
 }
