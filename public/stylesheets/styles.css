@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
-    font: 16px/1.5 'Roboto', Sans-serif !important;
-    height: 100%;
-    box-sizing: border-box;
-    background: #ecf0f5 !important;
-    color: #555 !important;
+  font: 16px/1.5 'Roboto', Sans-serif !important;
+  height: 100%;
+  box-sizing: border-box;
+  background: #ecf0f5 !important;
+  color: #555 !important;
 }
 .navbar {
   background-color: #5e30ba;
