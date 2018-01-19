@@ -19,7 +19,7 @@ body {
 }
 .menu {
   height: 100%;
-  margin: 15px 50px;
+  margin: 0 50px;
   float: right;
 }
 a:hover {
@@ -46,5 +46,11 @@ a {
   padding: 15px 25px;
 }
 .btn:hover {
+  background-color: #4b2696;
+}
+.menu-item a {
+  margin-top: 15px;
+}
+.menu-item:hover {
   background-color: #4b2696;
 }
