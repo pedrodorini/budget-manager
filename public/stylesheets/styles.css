@@ -96,7 +96,7 @@ a {
 .line3.active {
   transform: rotate(-45deg);
   background-color:#4b2696;
-  top:-7px;
+  top:-8px;
 }
 .menuitems {
   padding-top:12px;
