@@ -30,7 +30,6 @@ a {
   width: 80%;
   margin: 20px auto;
   text-align: center;
-  background-color: #fff;
 }
 .text-wrap {
   margin: 0 15px;
@@ -41,6 +40,7 @@ a {
 .btn {
   border-radius: 3px;
   background-color: #5e30ba;
+  color: #fff;
   padding: 15px 25px;
 }
 .btn:hover {
@@ -169,5 +169,9 @@ a {
   }
   .menu-item:hover {
     background-color: #4b2696;
+  }
+  .form-group {
+    width: 50%;
+    margin: 0 auto;
   }
 }
