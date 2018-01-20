@@ -6,3 +6,4 @@
     res.redirect('/login')
   }
  }
+module.exports = middlewareObj

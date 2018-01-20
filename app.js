@@ -9,9 +9,11 @@ const budgetRoutes = require('./routes/budget/budget')
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
 const User = require('./models/user')
+const PORT = process.env.PORT || config.port
+const DATABASE = process.env.DATABASEURL || config.database
 
 mongoose.Promise = global.Promise
-mongoose.connect(config.database)
+mongoose.connect(DATABASE)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(`${__dirname}/public`))
@@ -38,6 +40,6 @@ app.use((req, res, next) => {
 app.use(indexRoutes)
 app.use(budgetRoutes)
 
-app.listen(config.port, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${config.port}`)
 })
