@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/foundation.min.css">
   </head>
   <body>
     <nav class="navigation" id="topNav">
       <div class="brand"><a href="">Budget Manager</a></div>
-       <ul class="menu">
-        <li class="menu-item"><a href="/login">Login</a></li>
-        <li class="menu-item"><a href="/register">Sign up</a></li>
+      <ul class="menu">
+        <% if(!user) { %>
+          <li class="menu-item"><a href="/login">Login</a></li>
+          <li class="menu-item"><a href="/register">Sign up</a></li>
+        <% } else  { %>
+          <li class="menu-item"><a href="#">Signed In As <%= user.username %></a></li>
+          <li class="menu-item"><a href="/logout">Logout</a></li>
+        <% } %>
       </ul>
       <div id="closebtn" onclick="navToggle()">
         <span class="line1"></span>
@@ -20,8 +26,13 @@
         <span class="line3"></span>
       </div>
       <ul class="menulist">
-        <li><a class="menuitems" href="/login">Login</a></li>		
-        <li><a class="menuitems" href="/register">Sign up</a></li>				
+        <% if(!user) { %>
+          <li class="menuitems"><a href="/login">Login</a></li>
+          <li class="menuitems"><a href="/register">Sign up</a></li>
+        <% } else { %>
+          <li class="menuitems"><a href="#">Signed In As <%= user.username %></a></li>
+          <li class="menuitems"><a href="/logout">Logout</a></li>
+        <% } %>				
       </ul>	
       <div id="main">
       </div>

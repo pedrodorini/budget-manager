@@ -1,3 +1,32 @@
 <% include ../partials/header %>
-<h1>budget</h1>
+<div class="container">
+  <div class="row wrap card">
+    <form class="form-group">
+      <input type="text" name="description" placeholder="Description">
+      <select>
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select>
+      <button class="btn" type="submit">Add!</button>
+    </form>
+  </div>
+  <div class="row wrap">
+    <div class="large-6 small-12 columns card">
+        <ul>
+          <li>Expenses</li>
+          <li>Expenses</li>
+          <li>Expenses</li>
+          <li>Expenses</li>
+        </ul>
+    </div>
+    <div class="large-6 small-12 columns card">
+        <ul>
+          <li>Incomes</li>
+          <li>Incomes</li>
+          <li>Incomes</li>
+          <li>Incomes</li>
+        </ul>
+    </div>
+  </div>
+</div>
 <% include ../partials/footer %>
