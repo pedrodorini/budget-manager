@@ -28,16 +28,24 @@
   <div class="row wrap">
     <div class="large-6 small-12 columns card">
         <ul>
-          <% for (income of budgets.incomes) { %>
-            <li><%= income.description %> | <%= income.value %></li>
+          <% if (budgets) { %>
+            <% for (income of budgets.incomes) { %>
+              <% if (income.description) { %>
+                <li><%= income.description %> | <%= income.value %></li>
+              <% } %>
+            <% } %>
           <% } %>
         </ul>
     </div>
     <div class="large-6 small-12 columns card">
         <ul>
-          <% for (expense of budgets.expenses) { %>
-            <li><%= expense.description %> | <%= expense.value %></li>
-          <% } %>
+          <% if (budgets) { %>
+            <% for (expense of budgets.expenses) { %>
+              <% if (expense.description) { %>
+                <li><%= expense.description %> | <%= expense.value %></li>
+              <% } %>
+            <% } %>
+          <% } %>  
         </ul>
     </div>
   </div>
