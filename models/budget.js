@@ -1,15 +1,16 @@
 const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
-  owner: {
+  owner_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  description: String,
   month: String,
-  expenses: [{
+  incomes: [{
+    description: String,
     value: Number
   }],
-  incomes: [{
+  expenses: [{
+    description: String,
     value: Number
   }]
 }, {usePushEach: true})

@@ -1,10 +1,10 @@
 <% include ../partials/header %>
 <div class="container">
   <div class="row wrap card">
-    <form class="form-group">
+    <form class="form-group" action="/budget" method="POST">
       <input type="text" name="description" placeholder="Description">
-      <input type="text" name="value" placeholder="Value">
-      <select name="type">
+      <input type="number" name="value" placeholder="Value">
+      <select class="mg-b" name="type">
         <option value="expense">Expense</option>
         <option value="income">Income</option>
       </select>
@@ -28,18 +28,16 @@
   <div class="row wrap">
     <div class="large-6 small-12 columns card">
         <ul>
-          <li>Expenses</li>
-          <li>Expenses</li>
-          <li>Expenses</li>
-          <li>Expenses</li>
+          <% for (income of budgets.incomes) { %>
+            <li><%= income.description %> | <%= income.value %></li>
+          <% } %>
         </ul>
     </div>
     <div class="large-6 small-12 columns card">
         <ul>
-          <li>Incomes</li>
-          <li>Incomes</li>
-          <li>Incomes</li>
-          <li>Incomes</li>
+          <% for (expense of budgets.expenses) { %>
+            <li><%= expense.description %> | <%= expense.value %></li>
+          <% } %>
         </ul>
     </div>
   </div>
