@@ -189,7 +189,10 @@ ul {
   margin: 0;
 }
 .budget-row {
-  background-color: #ccc;
+  background-color: #e6e1e1;
+}
+.table h1 {
+  text-align: center;
 }
 @media (min-width: 640px) {
   #closebtn {
