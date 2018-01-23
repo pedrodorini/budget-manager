@@ -158,6 +158,12 @@ ul {
 .mg-b {
   margin-bottom: 15px; 
 }
+.table {
+  text-align: left;
+}
+.table-header {
+  font-weight: bold;
+}
 @media (min-width: 640px) {
   #closebtn {
     display: none;

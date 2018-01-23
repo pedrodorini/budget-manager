@@ -9,19 +9,19 @@ router.get('/budget', middleware.isLoggedIn, (req, res) => {
 })
 router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 	console.log(req.query)
-	Budget.findOne({owner_id: req.user._id, month: req.query.month}, (err, budget) => {
+	Budget.findOne({owner_id: req.user._id, month: req.query.month }, (err, budget) => {
 		console.log({owner_id: req.user._id, month: req.query.month})
 		if (err) {
 			console.log(err)
 		} else {
 			console.log(budget)
-			res.render('budget/budget', { budgets: budget })
+			res.render(`budget/budget`, {budget: budget})
 		}
 	})
 })
 router.post('/budget', middleware.isLoggedIn, (req, res) => {
 	let data = {description: req.body.description, value: req.body.value}
-	Budget.findOne({owner_id: req.user._id, month: req.body.month}, (err, budget) => {
+	Budget.findOne({ owner_id: req.user._id, month: req.body.month }, (err, budget) => {
 		if (err || !budget) {
 			let newBudget = {
 				owner_id: req.user._id,
@@ -34,13 +34,13 @@ router.post('/budget', middleware.isLoggedIn, (req, res) => {
 				if (err) {
 					console.log(err)
 				} else {
-					res.render('budget/budget', { budgets: budget })
+					res.redirect(`/budget/month?month=${req.body.month}`)
 				}
 			})
 		} else {
 			req.body.type === 'income' ? budget.incomes.push(data) : budget.expenses.push(data)
 			budget.save()
-			res.render('budget/budget', { budgets: budget })
+			res.redirect(`/budget/month?month=${req.body.month}`)
 		}
 	})
 })

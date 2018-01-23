@@ -26,27 +26,37 @@
     </form>
   </div>
   <div class="row wrap">
-    <div class="large-6 small-12 columns card">
-        <ul>
-          <% if (budgets) { %>
-            <% for (income of budgets.incomes) { %>
+    <div class="large-6 small-12 columns card table">
+      <div class="small-12 columns table-header">
+        <div class="small-6 columns">Description</div>
+        <div class="small-6 columns">Value</div>
+      </div>
+      <div class="small-12 columns">
+        <% if (budget) { %>
+            <% for (income of budget.incomes) { %>
               <% if (income.description) { %>
-                <li><%= income.description %> | <%= income.value %></li>
+                <div class="small-6 columns"><%= income.description %></div>
+                <div class="small-6 columns">$ <%= income.value.toFixed(2) %></div>
               <% } %>
             <% } %>
           <% } %>
-        </ul>
+      </div>
     </div>
-    <div class="large-6 small-12 columns card">
-        <ul>
-          <% if (budgets) { %>
-            <% for (expense of budgets.expenses) { %>
-              <% if (expense.description) { %>
-                <li><%= expense.description %> | <%= expense.value %></li>
-              <% } %>
+    <div class="large-6 small-12 columns card table">
+      <div class="small-12 columns table-header">
+        <div class="small-6 columns">Description</div>
+        <div class="small-6 columns">Value</div>
+      </div>
+      <div class="small-12 columns">
+        <% if (budget) { %>
+          <% for (expense of budget.expenses) { %>
+            <% if (expense.description) { %>
+              <div class="small-6 columns"><%= expense.description %></div>
+              <div class="small-6 columns">$ <%= expense.value.toFixed(2) %></div>
             <% } %>
-          <% } %>  
-        </ul>
+          <% } %>
+        <% } %> 
+      </div>
     </div>
   </div>
 </div>
