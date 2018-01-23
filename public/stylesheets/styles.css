@@ -27,7 +27,7 @@ a {
   color: #fff;
 }
 .container {
-  width: 80%;
+  width: 90%;
   margin: 20px auto;
   text-align: center;
 }
@@ -123,7 +123,7 @@ a {
   transition: width .2s;
 }
 .menuitems:hover::after {
-  width:100%;
+  width: 100%;
 }
 #closebtn {
   height:25px;
@@ -160,9 +160,36 @@ ul {
 }
 .table {
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
 }
 .table-header {
   font-weight: bold;
+  display: none;
+}
+.table.columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+.table-desc {
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff
+}
+.table-val {
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.table-edit-delete {
+  border-bottom: 1px solid #fff;
+  padding: 5px 0 5px 0;
+  margin-bottom: 15px;
+}
+.btn-small {
+  padding: 2px;
+  margin: 0;
+}
+.budget-row {
+  background-color: #ccc;
 }
 @media (min-width: 640px) {
   #closebtn {
@@ -194,5 +221,11 @@ ul {
   .form-group {
     width: 50%;
     margin: 0 auto;
+  }
+  .table-header {
+    display: block;
+  }
+  .table-edit-delete {
+    margin-bottom: 0;
   }
 }

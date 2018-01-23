@@ -27,32 +27,42 @@
   </div>
   <div class="row wrap">
     <div class="large-6 small-12 columns card table">
-      <div class="small-12 columns table-header">
-        <div class="small-6 columns">Description</div>
-        <div class="small-6 columns">Value</div>
+      <div class="small-12 table-header">
+        <div class="small-12 large-4 columns table-desc">Description</div>
+        <div class="small-12 large-4 columns table-val">Value</div>
+        <div class="small-12 large-4 columns table-val">Delete/Edit</div>
       </div>
-      <div class="small-12 columns">
+      <div class="small-12 table">
         <% if (budget) { %>
             <% for (income of budget.incomes) { %>
               <% if (income.description) { %>
-                <div class="small-6 columns"><%= income.description %></div>
-                <div class="small-6 columns">$ <%= income.value.toFixed(2) %></div>
+                <div class="small-12 large-4 columns table-desc budget-row"><%= income.description %></div>
+                <div class="small-12 large-4 columns table-val budget-row">$<%= income.value.toFixed(2) %></div>
+                <div class="small-12 large-4 columns table-edit-delete budget-row">
+                  <a class="btn btn-small" href="">Delete</a>
+                  <a class="btn btn-small" href="">Edit</a>
+                </div>
               <% } %>
             <% } %>
           <% } %>
       </div>
     </div>
     <div class="large-6 small-12 columns card table">
-      <div class="small-12 columns table-header">
-        <div class="small-6 columns">Description</div>
-        <div class="small-6 columns">Value</div>
+      <div class="small-12 table-header">
+        <div class="small-12 large-4 columns table-desc">Description</div>
+        <div class="small-12 large-4 columns table-val">Value</div>
+        <div class="small-12 large-4 columns table-val">Delete/Edit</div>
       </div>
-      <div class="small-12 columns">
+      <div class="small-12 table">
         <% if (budget) { %>
           <% for (expense of budget.expenses) { %>
             <% if (expense.description) { %>
-              <div class="small-6 columns"><%= expense.description %></div>
-              <div class="small-6 columns">$ <%= expense.value.toFixed(2) %></div>
+              <div class="small-12 large-4 columns table-desc budget-row"><%= expense.description %></div>
+              <div class="small-12 large-4 columns table-val budget-row">$<%= expense.value.toFixed(2) %></div>
+              <div class="small-12 large-4 columns table-edit-delete budget-row">
+                <a class="btn btn-small" href="">Delete</a>
+                <a class="btn btn-small" href="">Edit</a>
+              </div>
             <% } %>
           <% } %>
         <% } %> 
