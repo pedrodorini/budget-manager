@@ -42,8 +42,8 @@
                   <div class="small-12 large-4 columns table-desc budget-row"><%= income.description %></div>
                   <div class="small-12 large-4 columns table-val budget-row">$<%= income.value.toFixed(2) %></div>
                   <div class="small-12 large-4 columns table-edit-delete budget-row">
-                    <a class="btn btn-small" href="">Delete</a>
-                    <a class="btn btn-small" href="">Edit</a>
+                    <a><i class="i-remove"></i></a>
+                    <a><i class="i-edit"></i></a>
                   </div>
                 <% } %>
               <% } %>
@@ -66,8 +66,8 @@
                 <div class="small-12 large-4 columns table-desc budget-row"><%= expense.description %></div>
                 <div class="small-12 large-4 columns table-val budget-row">$<%= expense.value.toFixed(2) %></div>
                 <div class="small-12 large-4 columns table-edit-delete budget-row">
-                  <a href=""><i class="i-remove"></i></a>
-                  <a href=""><i class="i-edit"></i></a>
+                  <a><i class="i-remove"></i></a>
+                  <a><i class="i-edit"></i></a>
                 </div>
               <% } %>
             <% } %>

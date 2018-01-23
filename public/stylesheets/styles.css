@@ -199,10 +199,16 @@ ul {
   padding: 0 !important;
 }
 .i-remove {
-  background-image: url('/assets/icons/rubbish-bin.png');
+  padding: 5px 25%;
+  background: url("../assets/icons/rubbish-bin.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .i-edit {
-  background: url('/assets/icons/pencil-edit-button.png');
+  padding: 5px 25%;
+  background: url("../assets/icons/pencil-edit-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 @media (min-width: 640px) {
   #closebtn {
