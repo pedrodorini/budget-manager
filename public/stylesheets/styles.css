@@ -242,9 +242,9 @@ ul {
     margin-bottom: 0;
   }
   .incomes {
-    padding-left: 0 !important;
+    padding-right: 7.5px !important;
   }
   .expenses {
-    padding-right: 0 !important;
+    padding-left: 7.5px !important;
   }
 }
