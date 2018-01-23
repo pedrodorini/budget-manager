@@ -154,6 +154,7 @@ ul {
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 15px;
+  box-shadow: #555 5px 5px 5px;
 }
 .mg-b {
   margin-bottom: 15px; 
@@ -189,10 +190,19 @@ ul {
   margin: 0;
 }
 .budget-row {
-  background-color: #e6e1e1;
+  background-color: #e8e7e7;
 }
 .table h1 {
   text-align: center;
+}
+.incomes-expenses {
+  padding: 0 !important;
+}
+.i-remove {
+  background-image: url('/assets/icons/rubbish-bin.png');
+}
+.i-edit {
+  background: url('/assets/icons/pencil-edit-button.png');
 }
 @media (min-width: 640px) {
   #closebtn {
@@ -230,5 +240,11 @@ ul {
   }
   .table-edit-delete {
     margin-bottom: 0;
+  }
+  .incomes {
+    padding-left: 0 !important;
+  }
+  .expenses {
+    padding-right: 0 !important;
   }
 }
