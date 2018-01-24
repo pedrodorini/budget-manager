@@ -44,12 +44,28 @@ router.post('/budget', middleware.isLoggedIn, (req, res) => {
 		}
 	})
 })
-router.put('/budget/:id/edit', (req, res) => {
-	Budget.findByIdAndUpdate(req.params.id, req.body.budget, (err, budget) => {
+router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
+	Budget.findById(req.params.id, (err, budget) => {
 		if (err) {
 			console.log(err)
 		} else {
-			res.redirect(`/budget/month?month=${req.body.month}`)
+			console.log(budget)
+			let item = {}
+			if (req.params.type === 'expense') {
+				for (expense of budget.expenses) {
+					if (expense._id.equals(req.params.id_item)) {
+						item = expense
+					}
+				}
+			} else {
+				for (income of budget.expenses) {
+					if (income._id.equals(req.params.id_item)) {
+						item = income
+					}
+				}
+			}
+			console.log(item)
+			res.render('budget/editBudget', { budget: budget, item: item })
 		}
 	})
 })

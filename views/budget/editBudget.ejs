@@ -1,10 +1,10 @@
 <% include ../partials/header %>
 <div class="container">
   <div class="row wrap card">
-    <h1>Add item to your budget</h1>
+    <h1>Edit item to your budget</h1>
     <form class="form-group" action="/budget" method="POST">
-      <input type="text" name="description" placeholder="Description">
-      <input type="number" name="value" placeholder="Value">
+      <input type="text" name="description" value="<%= item.description %>">
+      <input type="number" name="value" value="<%= item.value %>">
       <select class="mg-b" name="type">
         <option value="expense">Expense</option>
         <option value="income">Income</option>
@@ -46,7 +46,7 @@
                       <button type="submit" class="i-remove"></button>
                     </form>
                     <div class="small-6 columns">
-                      <a href="/budget/<%= budget._id %>/income/<%= income._id %>/edit"></i></a>
+                      <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
                     </div>
                   </div>
                 <% } %>
@@ -74,7 +74,7 @@
                     <button type="submit" class="i-remove"></button>
                   </form>
                   <div class="small-6 columns edit">
-                    <a href="/budget/<%= budget._id %>/expese/<%= expense._id %>/edit"><i class="i-edit"></i></a>
+                    <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
                   </div>
                 </div>
               <% } %>
