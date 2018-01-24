@@ -39,11 +39,15 @@
           <% if (budget) { %>
               <% for (income of budget.incomes) { %>
                 <% if (income.description) { %>
-                  <div class="small-12 large-4 columns table-desc budget-row"><%= income.description %></div>
-                  <div class="small-12 large-4 columns table-val budget-row">$<%= income.value.toFixed(2) %></div>
-                  <div class="small-12 large-4 columns table-edit-delete budget-row">
-                    <a><i class="i-remove"></i></a>
-                    <a><i class="i-edit"></i></a>
+                  <div class="small-12 large-4 columns table-desc table-pad budget-row"><%= income.description %></div>
+                  <div class="small-12 large-4 columns table-val table-pad budget-row">$<%= income.value.toFixed(2) %></div>
+                  <div class="small-12 large-4 columns table-edit-delete table-pad budget-row">
+                    <form class=" small-6 columns form-delete">
+                      <button type="submit" class="i-remove"></button>
+                    </form>
+                    <div class="small-6 columns">
+                      <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
+                    </div>
                   </div>
                 <% } %>
               <% } %>
@@ -63,11 +67,15 @@
           <% if (budget) { %>
             <% for (expense of budget.expenses) { %>
               <% if (expense.description) { %>
-                <div class="small-12 large-4 columns table-desc budget-row"><%= expense.description %></div>
-                <div class="small-12 large-4 columns table-val budget-row">$<%= expense.value.toFixed(2) %></div>
-                <div class="small-12 large-4 columns table-edit-delete budget-row">
-                  <a><i class="i-remove"></i></a>
-                  <a><i class="i-edit"></i></a>
+                <div class="small-12 large-4 columns table-desc table-pad budget-row"><%= expense.description %></div>
+                <div class="small-12 large-4 columns table-val table-pad budget-row">$<%= expense.value.toFixed(2) %></div>
+                <div class="small-12 large-4 columns table-edit-delete table-pad budget-row">
+                  <form class="small-6 columns form-delete">
+                    <button type="submit" class="i-remove"></button>
+                  </form>
+                  <div class="small-6 columns edit">
+                    <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
+                  </div>
                 </div>
               <% } %>
             <% } %>

@@ -44,4 +44,13 @@ router.post('/budget', middleware.isLoggedIn, (req, res) => {
 		}
 	})
 })
+router.put('/budget/:id/edit', (req, res) => {
+	Budget.findByIdAndUpdate(req.params.id, req.body.budget, (err, budget) => {
+		if (err) {
+			console.log(err)
+		} else {
+			res.redirect(`/budget/month?month=${req.body.month}`)
+		}
+	})
+})
 module.exports = router;
