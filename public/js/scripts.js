@@ -3,6 +3,15 @@ let main = document.getElementById("main");
 let menu = document.getElementsByClassName("menuitems");
 let close = document.getElementById("closebtn");
 
+if (document.getElementById("type") !== null) {
+	let type = document.getElementById("type").textContent
+	if (type === 'income') {
+		document.getElementById('income').setAttribute('selected', 'selected')
+	} else {
+		document.getElementById('expense').setAttribute('selected', 'selected')
+	}
+}
+
 nav.style.height = "70px";
 main.style.marginTop = "70px";
 for (i = 0; i < menu.length; i++){
@@ -37,4 +46,5 @@ function navToggle() {
 	  }
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 	}
+
 }

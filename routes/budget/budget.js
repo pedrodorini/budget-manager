@@ -58,14 +58,13 @@ router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
 					}
 				}
 			} else {
-				for (income of budget.expenses) {
+				for (income of budget.incomes) {
 					if (income._id.equals(req.params.id_item)) {
 						item = income
 					}
 				}
 			}
-			console.log(item)
-			res.render('budget/editBudget', { budget: budget, item: item })
+			res.render('budget/editBudget', { budget: budget, item: item, type: req.params.type })
 		}
 	})
 })
