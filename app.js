@@ -19,7 +19,7 @@ mongoose.connect(DATABASE)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(`${__dirname}/public`))
 app.set('view engine', 'ejs')
-app.use(methodOverrid('_method'))
+app.use(methodOverride('_method'))
 
 app.use(require('express-session')({
 	secret: 's3cr3t',
