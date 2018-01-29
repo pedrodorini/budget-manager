@@ -43,7 +43,7 @@ router.post('/budget', middleware.isLoggedIn, (req, res) => {
 		}
 	})
 })
-router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
+router.get('/budget/:id/:type/:id_item/edit', middleware.isLoggedIn, (req, res) => {
 	Budget.findById(req.params.id, (err, budget) => {
 		if (err) {
 			console.log(err)
@@ -66,17 +66,15 @@ router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
 		}
 	})
 })
-router.put('/budget/:id/:type/:id_item', (req, res) => {
+router.put('/budget/:id/:type/:id_item', middleware.isLoggedIn, (req, res) => {
 	Budget.findById(req.params.id, (err, budget) => {
 		if (err) {
 			console.log(err)
 		} else {
 			let item = req.body.item
-			console.log(item)
 			if (req.params.type === 'expense') {
 				for (expense of budget.expenses) {
 					if (expense._id.equals(req.params.id_item)) {
-						console.log(expense)
 						expense.description = item.description
 						expense.value = item.value
 						budget.save()
