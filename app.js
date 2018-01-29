@@ -7,6 +7,7 @@ const config = require('./config/config')
 const indexRoutes = require('./routes/index')
 const budgetRoutes = require('./routes/budget/budget')
 const passport = require('passport')
+const methodOverride = require('method-override')
 const LocalStrategy = require('passport-local')
 const User = require('./models/user')
 const PORT = process.env.PORT || config.port
@@ -18,6 +19,7 @@ mongoose.connect(DATABASE)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(`${__dirname}/public`))
 app.set('view engine', 'ejs')
+app.use(methodOverrid('_method'))
 
 app.use(require('express-session')({
 	secret: 's3cr3t',
