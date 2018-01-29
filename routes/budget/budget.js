@@ -14,7 +14,6 @@ router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 		if (err) {
 			console.log(err)
 		} else {
-			console.log(budget)
 			res.render(`budget/budget`, {budget: budget})
 		}
 	})
@@ -49,7 +48,6 @@ router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
 		if (err) {
 			console.log(err)
 		} else {
-			console.log(budget)
 			let item = {}
 			if (req.params.type === 'expense') {
 				for (expense of budget.expenses) {
@@ -65,6 +63,35 @@ router.get('/budget/:id/:type/:id_item/edit', (req, res) => {
 				}
 			}
 			res.render('budget/editBudget', { budget: budget, item: item, type: req.params.type })
+		}
+	})
+})
+router.put('/budget/:id/:type/:id_item', (req, res) => {
+	Budget.findById(req.params.id, (err, budget) => {
+		if (err) {
+			console.log(err)
+		} else {
+			let item = req.body.item
+			console.log(item)
+			if (req.params.type === 'expense') {
+				for (expense of budget.expenses) {
+					if (expense._id.equals(req.params.id_item)) {
+						console.log(expense)
+						expense.description = item.description
+						expense.value = item.value
+						budget.save()
+					}
+				}
+			} else {
+				for (income of budget.incomes) {
+					if (income._id.equals(req.params.id_item)) {
+						income.description = item.description
+						income.value = item.value
+						budget.save()
+					}
+				}
+			}
+			res.render('budget/budget', { budget: budget})
 		}
 	})
 })

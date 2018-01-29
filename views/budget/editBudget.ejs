@@ -2,14 +2,14 @@
 <div class="container">
   <div class="row wrap card">
     <h1>Edit <span id="type"><%= type %></span></h1>
-    <form class="form-group" action="/budget/<%= budget._id %>/<%= type %>/<%= item._id %>/?_method=PUT" method="POST">
-      <input type="text" name="description" value="<%= item.description %>">
-      <input type="number" name="value" value="<%= item.value %>">
-      <select class="mg-b" name="type" value="income">
+    <form class="form-group" action="/budget/<%= budget._id %>/<%= type %>/<%= item._id %>?_method=PUT" method="POST">
+      <input type="text" name="item[description]" value="<%= item.description %>">
+      <input type="number" name="item[value]" value="<%= item.value %>">
+      <select class="mg-b" name="item[type]" value="income">
         <option id="expense" value="expense">Expense</option>
         <option id="income" value="income">Income</option>
       </select>
-      <select name="month">
+      <select disabled name="item[month]">
         <option value="january">January</option>
         <option value="february">February</option>
         <option value="march">March</option>
