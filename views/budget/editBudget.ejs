@@ -42,13 +42,13 @@
                   <div class="small-12 large-4 columns table-desc table-pad budget-row"><%= income.description %></div>
                   <div class="small-12 large-4 columns table-val table-pad budget-row">$<%= income.value.toFixed(2) %></div>
                   <div class="small-12 large-4 columns table-edit-delete table-pad budget-row">
-                    <form class=" small-6 columns form-delete">
+                    <form class="small-6 columns form-delete">
                       <button type="submit" class="i-remove"></button>
                     </form>
-                    <div class="small-6 columns">
-                      <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
+                    <div class="small-6 columns edit">
+                      <a href="/budget/<%= budget._id %>/income/<%= expense._id %>/edit"><i class="i-edit"></i></a>
                     </div>
-                  </div>
+                </div>
                 <% } %>
               <% } %>
             <% } %>
@@ -74,7 +74,7 @@
                     <button type="submit" class="i-remove"></button>
                   </form>
                   <div class="small-6 columns edit">
-                    <a href="/budget/<%= expense._id %>/edit"><i class="i-edit"></i></a>
+                    <a href="/budget/<%= budget._id %>/expense/<%= expense._id %>/edit"><i class="i-edit"></i></a>
                   </div>
                 </div>
               <% } %>
