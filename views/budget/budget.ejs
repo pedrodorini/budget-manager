@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <div class="container">
   <div class="row wrap card">
-    <h1>Add item to your budget</h1>
+    <h1>Add item to your <span id="month"><%= month %></span> budget</h1>
     <form class="form-group" action="/budget" method="POST">
       <input type="text" name="description" placeholder="Description">
       <input type="number" name="value" min="0.01" step="0.01" placeholder="Value">
@@ -10,18 +10,18 @@
         <option value="income">Income</option>
       </select>
       <select name="month">
-        <option value="january">January</option>
-        <option value="february">February</option>
-        <option value="march">March</option>
-        <option value="april">April</option>
-        <option value="may">May</option>
-        <option value="june">June</option>
-        <option value="july">July</option>
-        <option value="august">August</option>
-        <option value="september">September</option>
-        <option value="october">October</option>
-        <option value="november">November</option>
-        <option value="december">December</option>
+        <option id="january" value="january">January</option>
+        <option id="february" value="february">February</option>
+        <option id="march" value="march">March</option>
+        <option id="april" value="april">April</option>
+        <option id="may" value="may">May</option>
+        <option id="june" value="june">June</option>
+        <option id="july" value="july">July</option>
+        <option id="august" value="august">August</option>
+        <option id="september" value="september">September</option>
+        <option id="october" value="october">October</option>
+        <option id="november" value="november">November</option>
+        <option id="december" value="december">December</option>
       </select>
       <button class="btn" type="submit">Add</button>
     </form>

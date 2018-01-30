@@ -36,6 +36,7 @@ passport.deserializeUser(User.deserializeUser())
 
 app.use((req, res, next) => {
 	res.locals.user = req.user
+	res.locals.month = req.query.month
 	next()
 })
 

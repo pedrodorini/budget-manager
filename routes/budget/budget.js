@@ -5,7 +5,7 @@ const User = require('../../models/user')
 const Budget = require('../../models/budget')
 
 router.get('/budget', middleware.isLoggedIn, (req, res) => {
-	res.render('budget/selectBudget')
+	res.render('budget/select')
 })
 router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 	console.log(req.query)
@@ -54,7 +54,7 @@ router.get('/budget/:id/:type/:id_item/edit', middleware.isLoggedIn, (req, res) 
 					item = current
 				}
 			})
-			res.render('budget/editBudget', { budget: budget, item: item, type: req.params.type })
+			res.render('budget/edit', { budget: budget, item: item, type: req.params.type })
 		}
 	})
 })

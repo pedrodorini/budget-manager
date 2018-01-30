@@ -12,6 +12,10 @@ if (document.getElementById("type") !== null) {
 	}
 }
 
+if (document.getElementById('month')) {
+	document.getElementById(document.getElementById('month').textContent).setAttribute('selected', 'selected')
+}
+
 nav.style.height = "70px";
 main.style.marginTop = "70px";
 for (i = 0; i < menu.length; i++){
