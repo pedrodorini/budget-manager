@@ -19,7 +19,7 @@ router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 	})
 })
 router.post('/budget', middleware.isLoggedIn, (req, res) => {
-	let data = {description: req.body.description, value: req.body.value}
+	let data = { description: req.body.description, value: req.body.value }
 	Budget.findOne({ owner_id: req.user._id, month: req.body.month }, (err, budget) => {
 		if (err || !budget) {
 			let newBudget = {
@@ -44,7 +44,7 @@ router.post('/budget', middleware.isLoggedIn, (req, res) => {
 	})
 })
 router.get('/budget/:id/:type/:id_item/edit', middleware.isLoggedIn, (req, res) => {
-	Budget.findById(req.params.id, (err, budget) => {
+	Budget.findOne({owner_id: req.user._id, month: req.query.month }, (err, budget) => {
 		if (err) {
 			console.log(err)
 		} else {
