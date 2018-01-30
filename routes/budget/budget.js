@@ -20,7 +20,7 @@ router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 })
 router.post('/budget', middleware.isLoggedIn, (req, res) => {
 	let data = { description: req.body.description, value: req.body.value }
-	Budget.findOne({ owner_id: req.user._id, month: req.body.month }, (err, budget) => {
+	Budget.findOne({ owner_id: req.user._id, month: req.query.month }, (err, budget) => {
 		if (err || !budget) {
 			let newBudget = {
 				owner_id: req.user._id,
