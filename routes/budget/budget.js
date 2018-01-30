@@ -93,4 +93,24 @@ router.put('/budget/:id/:type/:id_item', middleware.isLoggedIn, (req, res) => {
 		}
 	})
 })
+router.delete('/budget/:id/:type/:id_item', middleware.isLoggedIn, (req, res) => {
+	console.log("in delete route")
+	Budget.findById(req.params.id, (err, budget) => {
+		if (err) {
+			console.log(err)
+		} else {
+			console.log(req.params.type)
+			let removeIndex;
+			budget[req.params.type].forEach((current, index) => {
+				if (current._id.equals(req.params.id_item)) {
+					removeIndex = index
+				}
+			})
+			console.log(removeIndex)
+			budget[req.params.type].splice(removeIndex, 1)
+			budget.save()
+			res.redirect(`/budget/month?month=${budget.month}`)
+		}
+	})
+})
 module.exports = router;
