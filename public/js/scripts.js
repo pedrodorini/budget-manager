@@ -19,7 +19,8 @@ if (document.getElementById('month')) {
 nav.style.height = "70px";
 main.style.marginTop = "70px";
 for (i = 0; i < menu.length; i++){
-  menu[i].style.marginTop="100px";
+	menu[i].style.marginTop="100px";
+	menu[i].style.display="none";
 };
 
 close.addEventListener("click", function(){
@@ -41,12 +42,13 @@ function navToggle() {
     document.body.style.backgroundColor = "rgba(0,0,0,0.0)";
 	} 
 	else if (nav.style.height <= "70px") {
-	  nav.style.height = "275px";
+		nav.style.height = "275px";
 	  main.style.marginTop = "275px";
     var i = 0;
     for (i = 0; i < menu.length; i++){
-	    menu[i].style.opacity="1.0";
+			menu[i].style.opacity="1.0";
 	    menu[i].style.marginTop="0px";
+			menu[i].style.display="inline-block";
 	  }
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 	}
