@@ -1,7 +1,8 @@
 <% include ../partials/header %>
 <div class="container">
   <div class="row wrap card">
-    <h1>Edit <span id="type"><%= type %></span></h1>
+    <h1>Balance: $<%= total %></h1>
+    <h1>Edit <span id="type"><%= type %></span> from <span id="month"><%= budget.month %></span></h1>
     <form class="form-group" action="/budget/<%= budget._id %>/<%= type %>/<%= item._id %>?_method=PUT" method="POST">
       <input type="text" name="item[description]" value="<%= item.description %>">
       <input type="number" min="0.01" step="0.01" name="item[value]" value="<%= item.value %>">
@@ -9,19 +10,19 @@
         <option id="expense" value="expense">Expense</option>
         <option id="income" value="income">Income</option>
       </select>
-      <select disabled name="item[month]">
-        <option value="january">January</option>
-        <option value="february">February</option>
-        <option value="march">March</option>
-        <option value="april">April</option>
-        <option value="may">May</option>
-        <option value="june">June</option>
-        <option value="july">July</option>
-        <option value="august">August</option>
-        <option value="september">September</option>
-        <option value="october">October</option>
-        <option value="november">November</option>
-        <option value="december">December</option>
+      <select disabled name="month">
+        <option id="january" value="january">January</option>
+        <option id="february" value="february">February</option>
+        <option id="march" value="march">March</option>
+        <option id="april" value="april">April</option>
+        <option id="may" value="may">May</option>
+        <option id="june" value="june">June</option>
+        <option id="july" value="july">July</option>
+        <option id="august" value="august">August</option>
+        <option id="september" value="september">September</option>
+        <option id="october" value="october">October</option>
+        <option id="november" value="november">November</option>
+        <option id="december" value="december">December</option>
       </select>
       <button class="btn" type="submit">Save</button>
     </form>

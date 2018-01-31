@@ -14,6 +14,8 @@ if (document.getElementById("type") !== null) {
 
 if (document.getElementById('month')) {
 	document.getElementById(document.getElementById('month').textContent).setAttribute('selected', 'selected')
+	let month = document.getElementById('month')
+	month.textContent = month.textContent.charAt(0).toUpperCase() + month.textContent.slice(1)
 }
 
 nav.style.height = "70px";

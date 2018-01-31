@@ -12,7 +12,10 @@ router.get('/budget/:month', middleware.isLoggedIn, (req, res) => {
 		if (err) {
 			console.log(err)
 		} else {
-			res.render(`budget/budget`, {budget: budget})
+			let totalExpenses = totals(budget.expenses)
+			let totalIncomes = totals(budget.incomes)
+			let total = totalIncomes - totalExpenses 
+			res.render(`budget/budget`, {budget: budget, total: parseFloat(total)})
 		}
 	})
 })
@@ -52,7 +55,10 @@ router.get('/budget/:id/:type/:id_item/edit', middleware.isLoggedIn, (req, res) 
 					item = current
 				}
 			})
-			res.render('budget/edit', { budget: budget, item: item, type: req.params.type })
+			let totalExpenses = totals(budget.expenses)
+			let totalIncomes = totals(budget.incomes)
+			let total = totalIncomes - totalExpenses 
+			res.render('budget/edit', { budget: budget, item: item, type: req.params.type, total: total })
 		}
 	})
 })
@@ -84,11 +90,20 @@ router.delete('/budget/:id/:type/:id_item', middleware.isLoggedIn, (req, res) =>
 					removeIndex = index
 				}
 			})
-			console.log(removeIndex)
 			budget[req.params.type].splice(removeIndex, 1)
 			budget.save()
 		}
 		res.redirect(`/budget/month?month=${budget.month}`)
 	})
 })
+
+function totals(array) {
+	let total = 0
+	for (item of array) {
+		if (item.value) {
+			total += parseFloat(item.value)
+		}
+	}
+	return total
+}
 module.exports = router;
