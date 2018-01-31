@@ -223,6 +223,14 @@ ul {
 .form-delete {
   display: inline;
 }
+.red {
+  border: 1px solid red;
+  background-color: #f79e9e;
+}
+.green {
+ border: 1px solid #78d878;
+ background-color: #b0e4b0;
+}
 @media (min-width: 640px) {
   #closebtn {
     display: none;

@@ -2,6 +2,7 @@ let nav = document.getElementById("topNav");
 let main = document.getElementById("main");
 let menu = document.getElementsByClassName("menuitems");
 let close = document.getElementById("closebtn");
+let balance = document.getElementById("balance");
 
 if (document.getElementById("type") !== null) {
 	let type = document.getElementById("type").textContent
@@ -9,6 +10,14 @@ if (document.getElementById("type") !== null) {
 		document.getElementById('income').setAttribute('selected', 'selected')
 	} else {
 		document.getElementById('expense').setAttribute('selected', 'selected')
+	}
+}
+
+if (balance) {
+	if (parseFloat(balance.textContent) < 0) {
+		document.getElementById('balanceDiv').classList.toggle('red');
+	} else {
+		document.getElementById('balanceDiv').classList.toggle('green');
 	}
 }
 
